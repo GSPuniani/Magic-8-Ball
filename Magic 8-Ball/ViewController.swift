@@ -8,6 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    // MARK: - Properties
+
+        let answers = ["Yes, definitely", "It is certain", "Without a doubt", "Yes", "Most likely", "Sure, why not?", "Same", "Tell me more", "Out to lunch", "Reply hazy", "Try Again", "Ask again later", "The cake is a lie", "42", "TMI", "Very doubtful", "Don't count on it", "My reply is no", "Absolutely not", "Possibly", "Maybe", "Probably not"]
 
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var shakeButton: UIButton!
@@ -15,7 +18,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    @IBAction func shakeButtonTapped(_ sender: Any) {
+//        Pick a random index
+        let randomIndex: Int = Int.random(in: 0..<answers.count)
+        
+        
+//        Assign the answer text to a random answer
+        answerLabel.text = answers[randomIndex]
+    }
+    
 
 }
 
